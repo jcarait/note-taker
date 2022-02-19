@@ -5,24 +5,24 @@ const { readAndAppend, readFromFile } = require("../helpers/fsUtils")
 // GET Route for retrieving all the notes
 
 notes.get("/", (req, res) =>
-  readFromFile("./db/notes.json").then((data) => res.json(JSON.parse))
+  readFromFile("./db/notes.json").then((data) => res.json(JSON.parse(data)))
 );
 
 // POST Route for submitting feedback
 notes.post("/", (req, res) => {
     //Destructuring assignment for the items in req.body
-    const { noteTitle, noteContent } = req.body;
+    const { title, text } = req.body;
 
     // If all the required properties are present
-    if (noteTitle, noteContent) {
+    if (title, text) {
 
         const newNote = {
-            noteTitle,
-            noteContent,
+            title,
+            text,
             note_id: uuidv4()
         };
 
-        readAndAppend(newNote, "./db/feedback.json");
+        readAndAppend(newNote, "./db/notes.json");
 
         const response = {
             status: "success",
@@ -31,7 +31,7 @@ notes.post("/", (req, res) => {
     
         res.json(response);
     } else {
-        res.json("Error in posting feedback");
+        res.json("Error in posting note");
     }
 });
 
