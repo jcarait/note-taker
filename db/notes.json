@@ -1,17 +1,7 @@
 [
     {
-        "title": "Visit friend",
-        "text": "Secret friend",
-        "id": "ad2c8519-f280-4140-af64-3d311fa3e2c2"
-    },
-    {
-        "title": "Cook 6:30p.m.",
-        "text": "There is steak on the bench.",
-        "id": "c37e4995-3dad-4899-98c7-eb27b2b7a41e"
-    },
-    {
-        "title": "Work Project",
-        "text": "Due 31/03/2022 - Need to get started",
-        "id": "6f4a233f-939e-4340-b03c-974c0f3a8c91"
+        "title": "Shopping List",
+        "text": "- Milk\n- Eggs\n- Bread",
+        "id": "f8361f4a-4f2b-4ed7-b934-bcc72c46f67d"
     }
 ]

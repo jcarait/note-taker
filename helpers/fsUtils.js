@@ -36,9 +36,10 @@ const readAndDelete = (id, file) => {
     if (err) {
       console.error(err);
     } else {
-      const parsedData = JSON.parse(data);
-      parsedData.filter(note => note.id !== id);
-      writeToFile(file, parsedData)
+      let parsedData = JSON.parse(data);
+      //filter and delete note object based on req.param.id
+      modData = parsedData.filter(note => note.id !== id)
+      writeToFile(file, modData)
     }
   });
 };
