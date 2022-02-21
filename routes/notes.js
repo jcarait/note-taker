@@ -35,4 +35,14 @@ notes.post("/", (req, res) => {
     }
 });
 
+notes.delete("api/notes/:id", (req, res) => {
+
+    const notes = readFromFile("./db/notes.json").then((data) => res.json(JSON.parse(data)))
+
+    const deleteNote = notes.splice(req.params.id, 1);
+    
+    readAndAppend(deleteNote, "./db/notes.json");
+    console.log(`Note with id: ${req.params.id}`);
+});
+
 module.exports = notes;
